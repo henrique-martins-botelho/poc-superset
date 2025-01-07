@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>POC - @superset-ui/embedded-sdk</title>
+</head>
+<body>
+  <h1>POC com @superset-ui/embedded-sdk</h1>
+
+  <div id="meu-chart" style="border: 1px solid #ccc; margin-top: 20px;"></div>
+
+  <script src="https://unpkg.com/@superset-ui/embedded-sdk"></script>
+
+  <script>
+    const supersetDomain = 'https://superset.ptmdev.com.br';
+    const dashboardId = 'b1db80c0-8cb6-4682-bb68-d00572bc1744';
+    const myAuthToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiaC5ib3RlbGhvQHBvcnRhbHRlbGVtZWRpY2luYS5jb20uYnIiLCJsYXN0X25hbWUiOiJFbWJlZGRlZCIsImZpcnN0X25hbWUiOiJUZXN0ZSJ9LCJyZXNvdXJjZXMiOlt7InR5cGUiOiJkYXNoYm9hcmQiLCJpZCI6ImIxZGI4MGMwLThjYjYtNDY4Mi1iYjY4LWQwMDU3MmJjMTc0NCJ9XSwicmxzX3J1bGVzIjpbXSwiaWF0IjoxNzM2MjU2NjUxLjkxMDIwNCwiZXhwIjoxNzM2MjU2OTUxLjkxMDIwNCwiYXVkIjoiaHR0cDovL3N1cGVyc2V0OjgwODgvIiwidHlwZSI6Imd1ZXN0In0.nS-EuEOSehlRcPwd3Epw3orFz6WFqiy9pp9hnbViBu4';
+
+    supersetEmbeddedSdk.embedDashboard({
+      id: dashboardId,
+      supersetDomain,
+      debug: true,
+      mountPoint: document.getElementById('meu-chart'),
+      fetchGuestToken: () => Promise.resolve(myAuthToken),
+      dashboardUiConfig: {
+        hideTitle: true,
+        filters: {
+          expanded: true,
+        },
+      },
+    })
+    .catch((error) => {
+      console.error('Erro ao embutir o dashboard:', error);
+      console.log('Erro ao carregar o dashboard. Tente novamente mais tarde.');
+    });
+  </script>
+</body>
+</html>
