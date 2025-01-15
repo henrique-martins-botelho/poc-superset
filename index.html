@@ -7,14 +7,14 @@
 <body>
   <h1>POC com @superset-ui/embedded-sdk</h1>
 
-  <div id="meu-chart" style="border: 1px solid #ccc; margin-top: 20px;"></div>
+  <div id="meu-chart" style="border: 1px solid #ccc; margin-top: 20px; width: 100%; height: 80vh;"></div>
 
   <script src="https://unpkg.com/@superset-ui/embedded-sdk"></script>
 
   <script>
     const supersetDomain = 'https://superset.ptmdev.com.br';
     const dashboardId = 'b1db80c0-8cb6-4682-bb68-d00572bc1744';
-    const myAuthToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiaC5ib3RlbGhvQHBvcnRhbHRlbGVtZWRpY2luYS5jb20uYnIiLCJsYXN0X25hbWUiOiJFbWJlZGRlZCIsImZpcnN0X25hbWUiOiJUZXN0ZSJ9LCJyZXNvdXJjZXMiOlt7InR5cGUiOiJkYXNoYm9hcmQiLCJpZCI6ImIxZGI4MGMwLThjYjYtNDY4Mi1iYjY4LWQwMDU3MmJjMTc0NCJ9XSwicmxzX3J1bGVzIjpbXSwiaWF0IjoxNzM2MjU2NjUxLjkxMDIwNCwiZXhwIjoxNzM2MjU2OTUxLjkxMDIwNCwiYXVkIjoiaHR0cDovL3N1cGVyc2V0OjgwODgvIiwidHlwZSI6Imd1ZXN0In0.nS-EuEOSehlRcPwd3Epw3orFz6WFqiy9pp9hnbViBu4';
+    const myAuthToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiaC5ib3RlbGhvQHBvcnRhbHRlbGVtZWRpY2luYS5jb20uYnIifSwicmVzb3VyY2VzIjpbeyJ0eXBlIjoiZGFzaGJvYXJkIiwiaWQiOiJiMWRiODBjMC04Y2I2LTQ2ODItYmI2OC1kMDA1NzJiYzE3NDQifV0sInJsc19ydWxlcyI6W10sImlhdCI6MTczNjk2NTQzMC4wMjk5NywiZXhwIjoxNzM2OTY1NzMwLjAyOTk3LCJhdWQiOiJodHRwOi8vc3VwZXJzZXQ6ODA4OC8iLCJ0eXBlIjoiZ3Vlc3QifQ.o_Tsg3szK8iflr0yHc6R5b75jWwylpUjijR5g5qF2R4';
 
     supersetEmbeddedSdk.embedDashboard({
       id: dashboardId,
